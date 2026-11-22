@@ -225,5 +225,7 @@ jobs:
           --flow ${APP_NAME}-pipeline
     - name: Deploy to production
       run: bash ci/start-application.sh
+    - name: Snapshot environment
+      run: kosli snapshot docker labs-prod
     - name: stop production environment
       run: bash ci/stop-application.sh
